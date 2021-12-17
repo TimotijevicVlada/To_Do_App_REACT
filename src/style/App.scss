@@ -4,3 +4,39 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
+.App {
+    .todo {
+        .todo_header {
+            display: flex;
+            justify-content: flex-end;
+            margin: 10px 50px;
+            .link {
+                text-decoration: none;
+                background-color: teal;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 5px;
+                &:hover {
+                    background-color: rgb(32, 153, 153);
+                }
+            }
+        }
+    }
+    .motivate {
+        .motivate_header {
+            display: flex;
+            justify-content: flex-end;
+            margin: 10px 50px;
+            .link {
+                text-decoration: none;
+                background-color: teal;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 5px;
+                &:hover {
+                    background-color: rgb(32, 153, 153);
+                }
+            }
+        }
+    }
+}

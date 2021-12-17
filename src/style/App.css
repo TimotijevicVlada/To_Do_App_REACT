@@ -5,4 +5,48 @@
   padding: 0;
   font-family: 'Poppins', sans-serif;
 }
+
+.App .todo .todo_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 10px 50px;
+}
+
+.App .todo .todo_header .link {
+  text-decoration: none;
+  background-color: teal;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.App .todo .todo_header .link:hover {
+  background-color: #209999;
+}
+
+.App .motivate .motivate_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 10px 50px;
+}
+
+.App .motivate .motivate_header .link {
+  text-decoration: none;
+  background-color: teal;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.App .motivate .motivate_header .link:hover {
+  background-color: #209999;
+}
 /*# sourceMappingURL=App.css.map */
