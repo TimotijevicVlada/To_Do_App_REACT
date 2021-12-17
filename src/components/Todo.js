@@ -1,15 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const Todo = () => {
-
-
+const Todo = ({title, desc, time}) => {
     return (
         <div className='todo'>
-            <div className='todo_header'>
-                <Link className='link' to="/motivate">Motivate me!</Link>
-            </div>
-            <h2>Hello from todo</h2>
+            <h3 className='todo_title'>{title}</h3>
+            <p className='todo_desc'>{desc}</p>
+            <p className='todo_time'>{time}</p>
         </div>
     )
 }

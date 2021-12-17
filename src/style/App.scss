@@ -5,7 +5,7 @@
     font-family: 'Poppins', sans-serif;
 }
 .App {
-    .todo {
+    .todos_page {
         .todo_header {
             display: flex;
             justify-content: flex-end;
@@ -18,6 +18,65 @@
                 border-radius: 5px;
                 &:hover {
                     background-color: rgb(32, 153, 153);
+                }
+            }
+        }
+        .title {
+            padding: 10px 0px;
+            display: flex;
+            justify-content: center;
+            h2 {
+                font-weight: 200;
+                margin-right: 20px;
+            }
+            button {
+                background-color: green;
+                color: white;
+                border-radius: 5px;
+                border: none;
+                padding: 5px 10px;
+                font-size: 17px;
+                cursor: pointer;
+            }
+        }
+        .search_todo {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0px;
+            input {
+                padding: 10px 20px;
+                background-color: rgb(236, 236, 236);
+                border: none;
+                border-radius: 5px;
+                font-size: 17px;
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+        .todos {
+            display: flex;
+            flex-wrap: wrap;
+            .todo {
+                width: 300px;
+                height: 300px;
+                background-color: whitesmoke;
+                border-radius: 10px;
+                padding: 20px;
+                margin: 10px;
+                .todo_title {
+                    height: 10%;
+                    text-align: center;
+                    font-weight: 200;
+                }
+                .todo_desc {
+                    height: 80%;
+                    padding: 10px 0px;
+                }
+                .todo_time {
+                    height: 10%;
+                    display: flex;
+                    justify-content: flex-end;
                 }
             }
         }

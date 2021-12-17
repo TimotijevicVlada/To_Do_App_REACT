@@ -6,7 +6,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.App .todo .todo_header {
+.App .todos_page .todo_header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,7 +16,7 @@
   margin: 10px 50px;
 }
 
-.App .todo .todo_header .link {
+.App .todos_page .todo_header .link {
   text-decoration: none;
   background-color: teal;
   color: white;
@@ -24,8 +24,93 @@
   border-radius: 5px;
 }
 
-.App .todo .todo_header .link:hover {
+.App .todos_page .todo_header .link:hover {
   background-color: #209999;
+}
+
+.App .todos_page .title {
+  padding: 10px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App .todos_page .title h2 {
+  font-weight: 200;
+  margin-right: 20px;
+}
+
+.App .todos_page .title button {
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 10px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.App .todos_page .search_todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10px 0px;
+}
+
+.App .todos_page .search_todo input {
+  padding: 10px 20px;
+  background-color: #ececec;
+  border: none;
+  border-radius: 5px;
+  font-size: 17px;
+}
+
+.App .todos_page .search_todo input:focus {
+  outline: none;
+}
+
+.App .todos_page .todos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.App .todos_page .todos .todo {
+  width: 300px;
+  height: 300px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+}
+
+.App .todos_page .todos .todo .todo_title {
+  height: 10%;
+  text-align: center;
+  font-weight: 200;
+}
+
+.App .todos_page .todos .todo .todo_desc {
+  height: 80%;
+  padding: 10px 0px;
+}
+
+.App .todos_page .todos .todo .todo_time {
+  height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .App .motivate .motivate_header {
