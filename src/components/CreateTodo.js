@@ -1,7 +1,9 @@
-import React, {useRef} from "react";
+import React, { useState, useRef} from "react";
 import { useFormik } from "formik";
 
 const CreateTodo = ({setCreateTodoVisible, todos, setTodos}) => {
+
+  const [successMessage, setSuccessMessage] = useState(false);
 
   const formRef = useRef();
 
@@ -48,10 +50,15 @@ const CreateTodo = ({setCreateTodoVisible, todos, setTodos}) => {
     validate,
     onSubmit: (values) => {
       setTodos([...todos, {
+        id: Math.random() * 10000,
         title: values.title,
         desc: values.description,
         time: values.date
       }])
+      setSuccessMessage(true);
+      setTimeout(() => {
+        setCreateTodoVisible(false);
+      }, 2000)
     },
   });
 
@@ -105,6 +112,7 @@ const CreateTodo = ({setCreateTodoVisible, todos, setTodos}) => {
           <div className="create_btn">
             <button type="submit">Add new todo</button>
           </div>
+          {successMessage && <div className="success_msg">Todo has been created!</div>}
         </div>
       </form>
     </div>

@@ -54,12 +54,14 @@
                 }
             }
         }
+
         .todos {
             display: flex;
             flex-wrap: wrap;
+            padding: 0px 50px;
             .todo {
                 width: 300px;
-                height: 300px;
+                height: 200px;
                 background-color: whitesmoke;
                 border-radius: 10px;
                 padding: 20px;
@@ -67,16 +69,31 @@
                 .todo_title {
                     height: 10%;
                     text-align: center;
-                    font-weight: 200;
+                    h3 {
+                         font-weight: 200;
+                    }
                 }
                 .todo_desc {
                     height: 80%;
                     padding: 10px 0px;
                 }
-                .todo_time {
+                .todo_bottom {
                     height: 10%;
                     display: flex;
-                    justify-content: flex-end;
+                    justify-content: space-between;
+                    .events {
+                        i {
+                            font-size: 25px;
+                            margin-right: 10px;
+                            cursor: pointer;
+                        }
+                        .fa-edit {
+                            color: orange;
+                        }
+                        .fa-trash {
+                            color: red;
+                        }
+                    }
                 }
             }
         }
@@ -143,6 +160,49 @@
                             font-size: 17px;
                             cursor: pointer;
                         }
+                    }
+                    .success_msg {
+                        color: green;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        .delete_wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(7px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .delete {
+                background-color: lightgray;
+                width: 700px;
+                padding: 20px;
+                border-radius: 15px;
+                .question {
+                    text-align: center;
+                    font-size: 18px;
+                    margin-bottom: 20px;
+                }
+                .events {
+                    display: flex;
+                    justify-content: center;
+                    button {
+                        margin-left: 10px;
+                        padding: 5px 30px;
+                        border: none;
+                        border-radius: 5px;
+                        font-size: 17px;
+                        cursor: pointer;
+                    }
+                    .del {
+                        background-color: red;
+                        color: white;
                     }
                 }
             }

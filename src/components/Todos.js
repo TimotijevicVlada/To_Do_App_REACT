@@ -2,13 +2,20 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import Todo from "./Todo";
 import CreateTodo from "./CreateTodo";
+import DeleteWindow from "./DeleteWindow";
 
 const Todos = () => {
-
   const [createTodoVisible, setCreateTodoVisible] = useState(false);
+  const [deleteWindow, setDeleteWindow] = useState(false);
+  const [itemToDelete, setItemToDelete] = useState("");
   const [todos, setTodos] = useState([]);
 
-  todos.sort((a, b) => new Date(a.time) - new Date(b.time));
+  
+  //Function that handle first click on delete button
+  const handleDelete = (id) => {
+    setDeleteWindow(true);
+    setItemToDelete(id);
+  };
 
   //Function that get todos from the local storage
   const getLocalTodos = () => {
@@ -19,20 +26,19 @@ const Todos = () => {
       setTodos(myTodos);
     }
   };
-  
+
   useEffect(() => {
     getLocalTodos();
-  }, [])
+  }, []);
 
   //Function that save todos to local storage
-  const saveLocaleTodos = useCallback( () => {
+  const saveLocaleTodos = useCallback(() => {
     localStorage.setItem("myTodos", JSON.stringify(todos));
   }, [todos]);
 
   useEffect(() => {
     saveLocaleTodos();
-  }, [todos])
-
+  }, [saveLocaleTodos]);
 
   return (
     <div className="todos_page">
@@ -50,17 +56,23 @@ const Todos = () => {
       <div className="search_todo">
         <input type="text" placeholder="Search todo" />
       </div>
+
       <div className="todos">
         {todos?.map((todo, index) => (
-          <Todo
-            key={index}
-            todo={todo}
-          />
+          <Todo key={index} todo={todo} setDeleteWindow={setDeleteWindow} handleDelete={handleDelete}/>
         ))}
       </div>
       {createTodoVisible && (
         <CreateTodo
           setCreateTodoVisible={setCreateTodoVisible}
+          todos={todos}
+          setTodos={setTodos}
+        />
+      )}
+      {deleteWindow && (
+        <DeleteWindow
+          setDeleteWindow={setDeleteWindow}
+          itemToDelete={itemToDelete}
           todos={todos}
           setTodos={setTodos}
         />
