@@ -1,8 +1,11 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import Todo from "./Todo";
+import CreateTodo from "./CreateTodo";
 
 const Todos = () => {
+
+  const [createTodoVisible, setCreateTodoVisible] = useState(false);
 
     const [todos, setTodos] = useState([{
         title: "Prodavnica",
@@ -27,7 +30,7 @@ const Todos = () => {
       </div>
       <div className="title">
         <h2>My To Do list</h2>
-        <button className="add">Add new todo</button>
+        <button onClick={() => setCreateTodoVisible(true)} className="add">Add new todo</button>
       </div>
       <div className="search_todo">
           <input type="text" placeholder="Search todo"/>
@@ -37,6 +40,7 @@ const Todos = () => {
                 <Todo key={index} title={item.title} desc={item.desc} time={item.time}/>
             ))}
       </div>
+      {createTodoVisible && <CreateTodo />}
     </div>
   );
 };
