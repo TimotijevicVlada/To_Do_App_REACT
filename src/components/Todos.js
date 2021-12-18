@@ -27,10 +27,10 @@ const Todos = () => {
 
   //Handle preview component
   const handlePreview = (id) => {
-    const preview = todos.filter(item => item.id === id);
+    const preview = todos.filter((item) => item.id === id);
     setPreviewTodo(preview[0]);
     setPreviewVisible(true);
-  }
+  };
 
   //Function that get todos from the local storage
   const getLocalTodos = () => {
@@ -100,7 +100,12 @@ const Todos = () => {
           setTodos={setTodos}
         />
       )}
-      {previewVisible && <Preview previewTodo={previewTodo} setPreviewVisible={setPreviewVisible}/>}
+      {previewVisible && (
+        <Preview
+          previewTodo={previewTodo}
+          setPreviewVisible={setPreviewVisible}
+        />
+      )}
     </div>
   );
 };
