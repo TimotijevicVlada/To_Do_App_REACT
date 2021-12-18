@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import Todo from "./Todo";
 import CreateTodo from "./CreateTodo";
@@ -6,8 +6,33 @@ import CreateTodo from "./CreateTodo";
 const Todos = () => {
 
   const [createTodoVisible, setCreateTodoVisible] = useState(false);
+  const [todos, setTodos] = useState([]);
 
-    const [todos, setTodos] = useState([]);
+  todos.sort((a, b) => new Date(a.time) - new Date(b.time));
+
+  //Function that get todos from the local storage
+  const getLocalTodos = () => {
+    if (localStorage.getItem("myTodos") === null) {
+      localStorage.setItem("myTodos", JSON.stringify([]));
+    } else {
+      const myTodos = JSON.parse(localStorage.getItem("myTodos"));
+      setTodos(myTodos);
+    }
+  };
+  
+  useEffect(() => {
+    getLocalTodos();
+  }, [])
+
+  //Function that save todos to local storage
+  const saveLocaleTodos = useCallback( () => {
+    localStorage.setItem("myTodos", JSON.stringify(todos));
+  }, [todos]);
+
+  useEffect(() => {
+    saveLocaleTodos();
+  }, [todos])
+
 
   return (
     <div className="todos_page">
@@ -18,17 +43,28 @@ const Todos = () => {
       </div>
       <div className="title">
         <h2>My To Do list</h2>
-        <button onClick={() => setCreateTodoVisible(true)} className="add">Add new todo</button>
+        <button onClick={() => setCreateTodoVisible(true)} className="add">
+          Add new todo
+        </button>
       </div>
       <div className="search_todo">
-          <input type="text" placeholder="Search todo"/>
+        <input type="text" placeholder="Search todo" />
       </div>
       <div className="todos">
-            {todos.map((item, index) => (
-                <Todo key={index} title={item.title} desc={item.desc} time={item.time}/>
-            ))}
+        {todos?.map((todo, index) => (
+          <Todo
+            key={index}
+            todo={todo}
+          />
+        ))}
       </div>
-      {createTodoVisible && <CreateTodo setCreateTodoVisible={setCreateTodoVisible} todos={todos} setTodos={setTodos}/>}
+      {createTodoVisible && (
+        <CreateTodo
+          setCreateTodoVisible={setCreateTodoVisible}
+          todos={todos}
+          setTodos={setTodos}
+        />
+      )}
     </div>
   );
 };
