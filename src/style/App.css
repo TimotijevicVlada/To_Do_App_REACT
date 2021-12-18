@@ -113,6 +113,111 @@
           justify-content: flex-end;
 }
 
+.App .todos_page .create_form {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .todos_page .create_form .form {
+  background-color: lightgray;
+  width: 350px;
+  min-height: 400px;
+  border-radius: 15px;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-animation: fadeInForm 0.4s linear;
+          animation: fadeInForm 0.4s linear;
+}
+
+@-webkit-keyframes fadeInForm {
+  0% {
+    -webkit-transform: translateY(3rem);
+            transform: translateY(3rem);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInForm {
+  0% {
+    -webkit-transform: translateY(3rem);
+            transform: translateY(3rem);
+    opacity: 0;
+  }
+}
+
+.App .todos_page .create_form .form .create_title {
+  text-align: center;
+}
+
+.App .todos_page .create_form .form .create_title h3 {
+  font-weight: 200;
+}
+
+.App .todos_page .create_form .form .form_content div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 7px 0px;
+}
+
+.App .todos_page .create_form .form .form_content div input {
+  border: none;
+  border-radius: 7px;
+  padding: 7px 0px;
+}
+
+.App .todos_page .create_form .form .form_content div input:focus {
+  outline: none;
+}
+
+.App .todos_page .create_form .form .form_content .error {
+  color: red;
+  font-size: 14px;
+}
+
+.App .todos_page .create_form .form .form_content .create_btn {
+  margin-top: 25px;
+}
+
+.App .todos_page .create_form .form .form_content .create_btn button {
+  padding: 7px 0px;
+  border: none;
+  border-radius: 7px;
+  background-color: green;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+}
+
 .App .motivate .motivate_header {
   display: -webkit-box;
   display: -ms-flexbox;

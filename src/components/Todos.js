@@ -7,19 +7,7 @@ const Todos = () => {
 
   const [createTodoVisible, setCreateTodoVisible] = useState(false);
 
-    const [todos, setTodos] = useState([{
-        title: "Prodavnica",
-        desc: "Treba da odem do prodavnice i da kupim hranu i pice.",
-        time: "12.20.2021"
-    }, {
-      title: "Prodavnica",
-      desc: "Treba da odem do prodavnice i da kupim hranu i pice.",
-      time: "12.20.2021"
-  }, {
-    title: "Prodavnica",
-    desc: "Treba da odem do prodavnice i da kupim hranu i pice.",
-    time: "12.20.2021"
-}]);
+    const [todos, setTodos] = useState([]);
 
   return (
     <div className="todos_page">
@@ -40,7 +28,7 @@ const Todos = () => {
                 <Todo key={index} title={item.title} desc={item.desc} time={item.time}/>
             ))}
       </div>
-      {createTodoVisible && <CreateTodo />}
+      {createTodoVisible && <CreateTodo setCreateTodoVisible={setCreateTodoVisible} todos={todos} setTodos={setTodos}/>}
     </div>
   );
 };
