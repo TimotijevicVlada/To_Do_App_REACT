@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Todo = ({todo, handleDelete}) => {
+const Todo = ({todo, handleDelete, handlePreview}) => {
 
 
 
     return (
-        <div className='todo'>
+        <div onClick={() => handlePreview(todo.id)} className='todo'>
             <div className='todo_title'>
                 <h3 >{todo.title}</h3>
             </div>

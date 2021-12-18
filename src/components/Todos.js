@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 import Todo from "./Todo";
 import CreateTodo from "./CreateTodo";
 import DeleteWindow from "./DeleteWindow";
+import Preview from "./Preview";
 
 const Todos = () => {
+  const [todos, setTodos] = useState([]);
   const [createTodoVisible, setCreateTodoVisible] = useState(false);
   const [deleteWindow, setDeleteWindow] = useState(false);
+  const [previewVisible, setPreviewVisible] = useState(false);
+  const [previewTodo, setPreviewTodo] = useState({});
   const [itemToDelete, setItemToDelete] = useState("");
-  const [todos, setTodos] = useState([]);
   const [search, setSearch] = useState("");
 
   //Variable that represent searched todos
@@ -21,6 +24,13 @@ const Todos = () => {
     setDeleteWindow(true);
     setItemToDelete(id);
   };
+
+  //Handle preview component
+  const handlePreview = (id) => {
+    const preview = todos.filter(item => item.id === id);
+    setPreviewTodo(preview[0]);
+    setPreviewVisible(true);
+  }
 
   //Function that get todos from the local storage
   const getLocalTodos = () => {
@@ -67,7 +77,12 @@ const Todos = () => {
       </div>
       <div className="todos">
         {searchedTodos?.map((todo, index) => (
-          <Todo key={index} todo={todo} handleDelete={handleDelete} />
+          <Todo
+            key={index}
+            todo={todo}
+            handleDelete={handleDelete}
+            handlePreview={handlePreview}
+          />
         ))}
       </div>
       {createTodoVisible && (
@@ -85,6 +100,7 @@ const Todos = () => {
           setTodos={setTodos}
         />
       )}
+      {previewVisible && <Preview previewTodo={previewTodo} setPreviewVisible={setPreviewVisible}/>}
     </div>
   );
 };
