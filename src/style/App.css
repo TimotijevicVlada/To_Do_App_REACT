@@ -292,9 +292,17 @@
   cursor: pointer;
 }
 
+.App .todos_page .delete_wrapper .delete .events .cancel:hover {
+  background-color: #e6e6e6;
+}
+
 .App .todos_page .delete_wrapper .delete .events .del {
   background-color: red;
   color: white;
+}
+
+.App .todos_page .delete_wrapper .delete .events .del:hover {
+  background-color: #ff3535;
 }
 
 .App .motivate .motivate_header {

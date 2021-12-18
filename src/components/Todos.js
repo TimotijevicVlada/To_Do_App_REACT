@@ -9,8 +9,13 @@ const Todos = () => {
   const [deleteWindow, setDeleteWindow] = useState(false);
   const [itemToDelete, setItemToDelete] = useState("");
   const [todos, setTodos] = useState([]);
+  const [search, setSearch] = useState("");
 
-  
+  //Variable that represent searched todos
+  const searchedTodos = todos.filter((item) =>
+    item.title.toLowerCase().includes(search.toLowerCase())
+  );
+
   //Function that handle first click on delete button
   const handleDelete = (id) => {
     setDeleteWindow(true);
@@ -54,12 +59,15 @@ const Todos = () => {
         </button>
       </div>
       <div className="search_todo">
-        <input type="text" placeholder="Search todo" />
+        <input
+          onChange={(e) => setSearch(e.target.value)}
+          type="text"
+          placeholder="Search todo"
+        />
       </div>
-
       <div className="todos">
-        {todos?.map((todo, index) => (
-          <Todo key={index} todo={todo} setDeleteWindow={setDeleteWindow} handleDelete={handleDelete}/>
+        {searchedTodos?.map((todo, index) => (
+          <Todo key={index} todo={todo} handleDelete={handleDelete} />
         ))}
       </div>
       {createTodoVisible && (

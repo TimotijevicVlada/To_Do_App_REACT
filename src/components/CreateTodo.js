@@ -56,9 +56,10 @@ const CreateTodo = ({setCreateTodoVisible, todos, setTodos}) => {
         time: values.date
       }])
       setSuccessMessage(true);
+      /*
       setTimeout(() => {
         setCreateTodoVisible(false);
-      }, 2000)
+      }, 2000)*/
     },
   });
 

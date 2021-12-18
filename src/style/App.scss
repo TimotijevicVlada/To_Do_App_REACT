@@ -200,9 +200,17 @@
                         font-size: 17px;
                         cursor: pointer;
                     }
+                    .cancel {
+                        &:hover {
+                            background-color: rgb(230, 230, 230);
+                        }
+                    }
                     .del {
                         background-color: red;
                         color: white;
+                        &:hover {
+                            background-color: rgb(255, 53, 53);
+                        }
                     }
                 }
             }

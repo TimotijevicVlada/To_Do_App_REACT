@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Todo = ({todo, setDeleteWindow, handleDelete}) => {
+const Todo = ({todo, handleDelete}) => {
 
 
 
