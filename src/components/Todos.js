@@ -18,6 +18,8 @@ const Todos = () => {
   const [search, setSearch] = useState("");
 
 
+  console.log(todos)
+
   //Variable that sort all todos ascending by date
   const sortedTodos = todos.sort((a, b) => new Date(a.time) - new Date(b.time));
 
@@ -86,7 +88,7 @@ const Todos = () => {
       <div className="title">
         <h2>My To Do list</h2>
         <button onClick={() => setCreateTodoVisible(true)} className="add">
-          Add new todo
+          Create new
         </button>
       </div>
       <div className="search_todo">
@@ -104,6 +106,8 @@ const Todos = () => {
             <Todo
               key={index}
               todo={todo}
+              todos={todos}
+              setTodos={setTodos}
               index={index}
               handleDelete={handleDelete}
               handlePreview={handlePreview}

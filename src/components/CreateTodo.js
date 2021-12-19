@@ -27,7 +27,8 @@ const CreateTodo = ({setCreateTodoVisible, todos, setTodos}) => {
         id: Math.random() * 10000,
         title: values.title,
         desc: values.description,
-        time: values.date
+        time: values.date,
+        completed: false
       }])
       setSuccessMessage(true);
     },
