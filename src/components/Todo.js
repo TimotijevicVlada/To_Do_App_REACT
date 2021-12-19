@@ -1,6 +1,6 @@
 import React from "react";
 
-const Todo = ({ todo, handleDelete, handlePreview }) => {
+const Todo = ({ todo, handleDelete, handlePreview, handleUpdate }) => {
 
 
     
@@ -16,7 +16,7 @@ const Todo = ({ todo, handleDelete, handlePreview }) => {
       </div>
       <div className="todo_bottom">
         <div className="events">
-          <i className="fas fa-edit"></i>
+          <i onClick={() => handleUpdate(todo.id)} className="fas fa-edit"></i>
           <i onClick={() => handleDelete(todo.id)} className="fas fa-trash"></i>
         </div>
         <p className="date">{todo.time}</p>

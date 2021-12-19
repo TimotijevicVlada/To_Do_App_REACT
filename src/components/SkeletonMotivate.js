@@ -6,8 +6,8 @@ const SkeletonMotivate = () => {
 
     return (
         <>
-            {skeletonLength.map(item => (
-                <div className='skeleton'>
+            {skeletonLength.map((item, index) => (
+                <div key={index} className='skeleton'>
                     <div className='skeleton_upper'><div></div></div>
                     <div className='skeleton_lower'><div></div></div>
                 </div>

@@ -4,12 +4,15 @@ import Todo from "./Todo";
 import CreateTodo from "./CreateTodo";
 import DeleteWindow from "./DeleteWindow";
 import Preview from "./Preview";
+import UpdateTodo from "./UpdateTodo";
 
 const Todos = () => {
   const [todos, setTodos] = useState([]);
   const [createTodoVisible, setCreateTodoVisible] = useState(false);
   const [deleteWindow, setDeleteWindow] = useState(false);
   const [previewVisible, setPreviewVisible] = useState(false);
+  const [updateVisible, setUpdateVisible] = useState(false);
+  const [itemToUpdate, setItemToUpdate] = useState({});
   const [previewTodo, setPreviewTodo] = useState({});
   const [itemToDelete, setItemToDelete] = useState("");
   const [search, setSearch] = useState("");
@@ -25,12 +28,19 @@ const Todos = () => {
     setItemToDelete(id);
   };
 
-  //Handle preview component
+  //Handle preview todo
   const handlePreview = (id) => {
     const preview = todos.filter((item) => item.id === id);
     setPreviewTodo(preview[0]);
     setPreviewVisible(true);
   };
+
+  //Handle update todo
+  const handleUpdate = (id) => {
+    setUpdateVisible(true);
+    const itemUpdate = todos.filter(item => item.id === id);
+    setItemToUpdate(itemUpdate[0]);
+  }
 
   //Function that get todos from the local storage
   const getLocalTodos = () => {
@@ -82,6 +92,7 @@ const Todos = () => {
             todo={todo}
             handleDelete={handleDelete}
             handlePreview={handlePreview}
+            handleUpdate={handleUpdate}
           />
         ))}
       </div>
@@ -106,6 +117,7 @@ const Todos = () => {
           setPreviewVisible={setPreviewVisible}
         />
       )}
+      {updateVisible && <UpdateTodo todos={todos} setTodos={setTodos} itemToUpdate={itemToUpdate} setUpdateVisible={setUpdateVisible}/>}
     </div>
   );
 };

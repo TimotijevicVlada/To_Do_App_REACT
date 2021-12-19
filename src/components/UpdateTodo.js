@@ -1,18 +1,17 @@
-import React, { useState, useRef} from "react";
+import React, { useRef, useState } from "react";
 import { useFormik } from "formik";
 
-const CreateTodo = ({setCreateTodoVisible, todos, setTodos}) => {
+const UpdateTodo = ({ itemToUpdate, setUpdateVisible, todos, setTodos }) => {
 
   const [successMessage, setSuccessMessage] = useState(false);
-
   const formRef = useRef();
 
   //Function that exit the form when we click out of the form
   const handleExit = (e) => {
-    if(!formRef.current.contains(e.target)) {
-      setCreateTodoVisible(false);
+    if (!formRef.current.contains(e.target)) {
+      setUpdateVisible(false);
     }
-  }
+  };
 
   //Custom form validation
   const validate = (values) => {
@@ -43,37 +42,38 @@ const CreateTodo = ({setCreateTodoVisible, todos, setTodos}) => {
   //Formik library
   const formik = useFormik({
     initialValues: {
-      title: "",
-      description: "",
-      date: "",
+      title: itemToUpdate.title,
+      description: itemToUpdate.desc,
+      date: itemToUpdate.time,
     },
     validate,
     onSubmit: (values) => {
-      setTodos([...todos, {
-        id: Math.random() * 10000,
-        title: values.title,
-        desc: values.description,
-        time: values.date
-      }])
+      const updatedTodos = todos.map((item) =>
+        item.id === itemToUpdate.id ? {
+              ...item,
+              title: values.title,
+              desc: values.description,
+              time: values.date,
+            } : item);
+      setTodos(updatedTodos);
       setSuccessMessage(true);
     },
   });
 
   return (
-    <div onClick={handleExit} className="create_form">
-      <form ref={formRef} onSubmit={formik.handleSubmit} className="form">
-        <div className="create_title">
-          <h3>Create new todo</h3>
+    <div onClick={handleExit} className="update_form">
+      <form ref={formRef} onSubmit={formik.handleSubmit} className="update">
+        <div className="update_title">
+          <h3>Update Todo</h3>
         </div>
-        <div className="form_content">
+        <div className="update_content">
           <div>
             <label htmlFor="title">Title</label>
             <input
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.title}
               type="text"
               name="title"
+              value={formik.values.title}
+              onChange={formik.handleChange}
             />
           </div>
           {formik.touched.title && formik.errors.title && (
@@ -82,11 +82,10 @@ const CreateTodo = ({setCreateTodoVisible, todos, setTodos}) => {
           <div>
             <label htmlFor="description">Description</label>
             <input
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.description}
               type="text"
               name="description"
+              value={formik.values.description}
+              onChange={formik.handleChange}
             />
           </div>
           {formik.touched.description && formik.errors.description && (
@@ -95,25 +94,23 @@ const CreateTodo = ({setCreateTodoVisible, todos, setTodos}) => {
           <div>
             <label htmlFor="date">Date</label>
             <input
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.date}
               type="text"
               name="date"
-              id="date"
+              value={formik.values.date}
+              onChange={formik.handleChange}
             />
           </div>
           {formik.touched.date && formik.errors.date && (
             <div className="error">{formik.errors.date}</div>
           )}
-          <div className="create_btn">
-            <button type="submit">Add new todo</button>
+          <div className="update_btn">
+            <button type="submit">Update todo</button>
           </div>
-          {successMessage && <div className="success_msg">Todo has been created!</div>}
+          {successMessage && <div className="success_msg">Todo has been updated!</div>}
         </div>
       </form>
     </div>
   );
 };
 
-export default CreateTodo;
+export default UpdateTodo;
