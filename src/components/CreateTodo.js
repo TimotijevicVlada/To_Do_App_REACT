@@ -1,10 +1,10 @@
 import React, { useState, useRef} from "react";
 import { useFormik } from "formik";
+import { validate } from "../validation/Validation";
 
 const CreateTodo = ({setCreateTodoVisible, todos, setTodos}) => {
 
   const [successMessage, setSuccessMessage] = useState(false);
-
   const formRef = useRef();
 
   //Function that exit the form when we click out of the form
@@ -13,32 +13,6 @@ const CreateTodo = ({setCreateTodoVisible, todos, setTodos}) => {
       setCreateTodoVisible(false);
     }
   }
-
-  //Custom form validation
-  const validate = (values) => {
-    const errors = {};
-
-    if (!values.title) {
-      errors.title = "Title is required!";
-    } else if (values.title.length < 2 || values.title.length > 15) {
-      errors.title = "Must be beteween 2 and 15 caracters!";
-    }
-
-    if (!values.description) {
-      errors.description = "Description is required!";
-    } else if (
-      values.description.length < 5 ||
-      values.description.length > 20
-    ) {
-      errors.description = "Must be beteween 5 and 20 caracters!";
-    }
-
-    if (!values.date) {
-      errors.date = "Date is required!";
-    }
-
-    return errors;
-  };
 
   //Formik library
   const formik = useFormik({
