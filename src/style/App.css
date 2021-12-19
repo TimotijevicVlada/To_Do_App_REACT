@@ -6,6 +6,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+.App .todos_page {
+  min-height: 90vh;
+}
+
 .App .todos_page .todo_header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -205,7 +209,8 @@
   padding: 20px 0px;
 }
 
-.App .todos_page .create_form, .App .todos_page .update_form {
+.App .todos_page .create_form,
+.App .todos_page .update_form {
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -225,7 +230,10 @@
           align-items: center;
 }
 
-.App .todos_page .create_form .form, .App .todos_page .create_form .update, .App .todos_page .update_form .form, .App .todos_page .update_form .update {
+.App .todos_page .create_form .form,
+.App .todos_page .create_form .update,
+.App .todos_page .update_form .form,
+.App .todos_page .update_form .update {
   background-color: lightgray;
   width: 350px;
   min-height: 400px;
@@ -261,15 +269,36 @@
   }
 }
 
-.App .todos_page .create_form .form .create_title, .App .todos_page .create_form .form .update_title, .App .todos_page .create_form .update .create_title, .App .todos_page .create_form .update .update_title, .App .todos_page .update_form .form .create_title, .App .todos_page .update_form .form .update_title, .App .todos_page .update_form .update .create_title, .App .todos_page .update_form .update .update_title {
+.App .todos_page .create_form .form .create_title,
+.App .todos_page .create_form .form .update_title,
+.App .todos_page .create_form .update .create_title,
+.App .todos_page .create_form .update .update_title,
+.App .todos_page .update_form .form .create_title,
+.App .todos_page .update_form .form .update_title,
+.App .todos_page .update_form .update .create_title,
+.App .todos_page .update_form .update .update_title {
   text-align: center;
 }
 
-.App .todos_page .create_form .form .create_title h3, .App .todos_page .create_form .form .update_title h3, .App .todos_page .create_form .update .create_title h3, .App .todos_page .create_form .update .update_title h3, .App .todos_page .update_form .form .create_title h3, .App .todos_page .update_form .form .update_title h3, .App .todos_page .update_form .update .create_title h3, .App .todos_page .update_form .update .update_title h3 {
+.App .todos_page .create_form .form .create_title h3,
+.App .todos_page .create_form .form .update_title h3,
+.App .todos_page .create_form .update .create_title h3,
+.App .todos_page .create_form .update .update_title h3,
+.App .todos_page .update_form .form .create_title h3,
+.App .todos_page .update_form .form .update_title h3,
+.App .todos_page .update_form .update .create_title h3,
+.App .todos_page .update_form .update .update_title h3 {
   font-weight: 200;
 }
 
-.App .todos_page .create_form .form .form_content div, .App .todos_page .create_form .form .update_content div, .App .todos_page .create_form .update .form_content div, .App .todos_page .create_form .update .update_content div, .App .todos_page .update_form .form .form_content div, .App .todos_page .update_form .form .update_content div, .App .todos_page .update_form .update .form_content div, .App .todos_page .update_form .update .update_content div {
+.App .todos_page .create_form .form .form_content div,
+.App .todos_page .create_form .form .update_content div,
+.App .todos_page .create_form .update .form_content div,
+.App .todos_page .create_form .update .update_content div,
+.App .todos_page .update_form .form .form_content div,
+.App .todos_page .update_form .form .update_content div,
+.App .todos_page .update_form .update .form_content div,
+.App .todos_page .update_form .update .update_content div {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -281,26 +310,77 @@
   margin: 7px 0px;
 }
 
-.App .todos_page .create_form .form .form_content div input, .App .todos_page .create_form .form .update_content div input, .App .todos_page .create_form .update .form_content div input, .App .todos_page .create_form .update .update_content div input, .App .todos_page .update_form .form .form_content div input, .App .todos_page .update_form .form .update_content div input, .App .todos_page .update_form .update .form_content div input, .App .todos_page .update_form .update .update_content div input {
+.App .todos_page .create_form .form .form_content div input,
+.App .todos_page .create_form .form .update_content div input,
+.App .todos_page .create_form .update .form_content div input,
+.App .todos_page .create_form .update .update_content div input,
+.App .todos_page .update_form .form .form_content div input,
+.App .todos_page .update_form .form .update_content div input,
+.App .todos_page .update_form .update .form_content div input,
+.App .todos_page .update_form .update .update_content div input {
   border: none;
   border-radius: 7px;
   padding: 7px 5px;
 }
 
-.App .todos_page .create_form .form .form_content div input:focus, .App .todos_page .create_form .form .update_content div input:focus, .App .todos_page .create_form .update .form_content div input:focus, .App .todos_page .create_form .update .update_content div input:focus, .App .todos_page .update_form .form .form_content div input:focus, .App .todos_page .update_form .form .update_content div input:focus, .App .todos_page .update_form .update .form_content div input:focus, .App .todos_page .update_form .update .update_content div input:focus {
+.App .todos_page .create_form .form .form_content div input:focus,
+.App .todos_page .create_form .form .update_content div input:focus,
+.App .todos_page .create_form .update .form_content div input:focus,
+.App .todos_page .create_form .update .update_content div input:focus,
+.App .todos_page .update_form .form .form_content div input:focus,
+.App .todos_page .update_form .form .update_content div input:focus,
+.App .todos_page .update_form .update .form_content div input:focus,
+.App .todos_page .update_form .update .update_content div input:focus {
   outline: none;
 }
 
-.App .todos_page .create_form .form .form_content .error, .App .todos_page .create_form .form .update_content .error, .App .todos_page .create_form .update .form_content .error, .App .todos_page .create_form .update .update_content .error, .App .todos_page .update_form .form .form_content .error, .App .todos_page .update_form .form .update_content .error, .App .todos_page .update_form .update .form_content .error, .App .todos_page .update_form .update .update_content .error {
+.App .todos_page .create_form .form .form_content .error,
+.App .todos_page .create_form .form .update_content .error,
+.App .todos_page .create_form .update .form_content .error,
+.App .todos_page .create_form .update .update_content .error,
+.App .todos_page .update_form .form .form_content .error,
+.App .todos_page .update_form .form .update_content .error,
+.App .todos_page .update_form .update .form_content .error,
+.App .todos_page .update_form .update .update_content .error {
   color: red;
   font-size: 14px;
 }
 
-.App .todos_page .create_form .form .form_content .create_btn, .App .todos_page .create_form .form .form_content .update_btn, .App .todos_page .create_form .form .update_content .create_btn, .App .todos_page .create_form .form .update_content .update_btn, .App .todos_page .create_form .update .form_content .create_btn, .App .todos_page .create_form .update .form_content .update_btn, .App .todos_page .create_form .update .update_content .create_btn, .App .todos_page .create_form .update .update_content .update_btn, .App .todos_page .update_form .form .form_content .create_btn, .App .todos_page .update_form .form .form_content .update_btn, .App .todos_page .update_form .form .update_content .create_btn, .App .todos_page .update_form .form .update_content .update_btn, .App .todos_page .update_form .update .form_content .create_btn, .App .todos_page .update_form .update .form_content .update_btn, .App .todos_page .update_form .update .update_content .create_btn, .App .todos_page .update_form .update .update_content .update_btn {
+.App .todos_page .create_form .form .form_content .create_btn,
+.App .todos_page .create_form .form .form_content .update_btn,
+.App .todos_page .create_form .form .update_content .create_btn,
+.App .todos_page .create_form .form .update_content .update_btn,
+.App .todos_page .create_form .update .form_content .create_btn,
+.App .todos_page .create_form .update .form_content .update_btn,
+.App .todos_page .create_form .update .update_content .create_btn,
+.App .todos_page .create_form .update .update_content .update_btn,
+.App .todos_page .update_form .form .form_content .create_btn,
+.App .todos_page .update_form .form .form_content .update_btn,
+.App .todos_page .update_form .form .update_content .create_btn,
+.App .todos_page .update_form .form .update_content .update_btn,
+.App .todos_page .update_form .update .form_content .create_btn,
+.App .todos_page .update_form .update .form_content .update_btn,
+.App .todos_page .update_form .update .update_content .create_btn,
+.App .todos_page .update_form .update .update_content .update_btn {
   margin-top: 25px;
 }
 
-.App .todos_page .create_form .form .form_content .create_btn button, .App .todos_page .create_form .form .form_content .update_btn button, .App .todos_page .create_form .form .update_content .create_btn button, .App .todos_page .create_form .form .update_content .update_btn button, .App .todos_page .create_form .update .form_content .create_btn button, .App .todos_page .create_form .update .form_content .update_btn button, .App .todos_page .create_form .update .update_content .create_btn button, .App .todos_page .create_form .update .update_content .update_btn button, .App .todos_page .update_form .form .form_content .create_btn button, .App .todos_page .update_form .form .form_content .update_btn button, .App .todos_page .update_form .form .update_content .create_btn button, .App .todos_page .update_form .form .update_content .update_btn button, .App .todos_page .update_form .update .form_content .create_btn button, .App .todos_page .update_form .update .form_content .update_btn button, .App .todos_page .update_form .update .update_content .create_btn button, .App .todos_page .update_form .update .update_content .update_btn button {
+.App .todos_page .create_form .form .form_content .create_btn button,
+.App .todos_page .create_form .form .form_content .update_btn button,
+.App .todos_page .create_form .form .update_content .create_btn button,
+.App .todos_page .create_form .form .update_content .update_btn button,
+.App .todos_page .create_form .update .form_content .create_btn button,
+.App .todos_page .create_form .update .form_content .update_btn button,
+.App .todos_page .create_form .update .update_content .create_btn button,
+.App .todos_page .create_form .update .update_content .update_btn button,
+.App .todos_page .update_form .form .form_content .create_btn button,
+.App .todos_page .update_form .form .form_content .update_btn button,
+.App .todos_page .update_form .form .update_content .create_btn button,
+.App .todos_page .update_form .form .update_content .update_btn button,
+.App .todos_page .update_form .update .form_content .create_btn button,
+.App .todos_page .update_form .update .form_content .update_btn button,
+.App .todos_page .update_form .update .update_content .create_btn button,
+.App .todos_page .update_form .update .update_content .update_btn button {
   padding: 7px 0px;
   border: none;
   border-radius: 7px;
@@ -310,7 +390,14 @@
   cursor: pointer;
 }
 
-.App .todos_page .create_form .form .form_content .success_msg, .App .todos_page .create_form .form .update_content .success_msg, .App .todos_page .create_form .update .form_content .success_msg, .App .todos_page .create_form .update .update_content .success_msg, .App .todos_page .update_form .form .form_content .success_msg, .App .todos_page .update_form .form .update_content .success_msg, .App .todos_page .update_form .update .form_content .success_msg, .App .todos_page .update_form .update .update_content .success_msg {
+.App .todos_page .create_form .form .form_content .success_msg,
+.App .todos_page .create_form .form .update_content .success_msg,
+.App .todos_page .create_form .update .form_content .success_msg,
+.App .todos_page .create_form .update .update_content .success_msg,
+.App .todos_page .update_form .form .form_content .success_msg,
+.App .todos_page .update_form .form .update_content .success_msg,
+.App .todos_page .update_form .update .form_content .success_msg,
+.App .todos_page .update_form .update .update_content .success_msg {
   color: green;
   text-align: center;
 }
@@ -444,6 +531,10 @@
   text-align: right;
 }
 
+.App .motivate {
+  min-height: 90vh;
+}
+
 .App .motivate .motivate_header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -476,7 +567,6 @@
 }
 
 .App .motivate .motivate_msg {
-  padding: 0px 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -495,7 +585,7 @@
   margin: 10px 0px;
   padding: 20px;
   border-radius: 10px;
-  width: 60%;
+  width: 1000px;
 }
 
 .App .motivate .motivate_msg .msg .quote {
@@ -515,7 +605,7 @@
 .App .motivate .motivate_msg .skeleton {
   -webkit-box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.35);
           box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.35);
-  width: 60%;
+  width: 1000px;
   height: 90px;
   margin: 10px 0px;
   border-radius: 10px;
@@ -563,5 +653,86 @@
   height: 100%;
   border-radius: 7px;
   background-color: #dadada;
+}
+
+.App .footer {
+  height: 10vh;
+  font-size: 17px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 1250px) {
+  .App .motivate .motivate_msg .msg,
+  .App .motivate .motivate_msg .skeleton {
+    width: 800px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .App .motivate .motivate_msg .msg,
+  .App .motivate .motivate_msg .skeleton {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .App .todos_page .delete_wrapper .delete {
+    width: 450px;
+  }
+  .App .motivate .motivate_msg .msg,
+  .App .motivate .motivate_msg .skeleton {
+    width: 450px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .App .todos_page .todo_header {
+    margin: 10px;
+  }
+  .App .todos_page .todo_header .link {
+    padding: 5px 15px;
+  }
+  .App .todos_page .search_todo input {
+    width: 90%;
+  }
+  .App .todos_page .todos {
+    padding: 0px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .App .todos_page .todos .todo {
+    width: 90%;
+  }
+  .App .todos_page .create_form .form,
+  .App .todos_page .create_form .update,
+  .App .todos_page .update_form .form,
+  .App .todos_page .update_form .update {
+    width: 90%;
+  }
+  .App .todos_page .delete_wrapper .delete {
+    width: 95%;
+  }
+  .App .todos_page .preview_wrapper .preview {
+    width: 90%;
+  }
+  .App .motivate .motivate_header {
+    margin: 10px;
+  }
+  .App .motivate .motivate_header .link {
+    padding: 5px 15px;
+  }
+  .App .motivate .motivate_msg .msg,
+  .App .motivate .motivate_msg .skeleton {
+    width: 95%;
+  }
 }
 /*# sourceMappingURL=App.css.map */

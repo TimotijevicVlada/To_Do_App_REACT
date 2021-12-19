@@ -6,6 +6,7 @@
 }
 .App {
   .todos_page {
+    min-height: 90vh;
     .todo_header {
       display: flex;
       justify-content: flex-end;
@@ -106,7 +107,6 @@
               font-weight: bold;
               color: teal;
             }
-
           }
           .todo_desc {
             padding: 10px 0px;
@@ -147,7 +147,8 @@
         padding: 20px 0px;
       }
     }
-    .create_form, .update_form {
+    .create_form,
+    .update_form {
       position: fixed;
       width: 100%;
       height: 100vh;
@@ -158,7 +159,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      .form, .update {
+      .form,
+      .update {
         background-color: lightgray;
         width: 350px;
         min-height: 400px;
@@ -174,13 +176,15 @@
             opacity: 0;
           }
         }
-        .create_title, .update_title {
+        .create_title,
+        .update_title {
           text-align: center;
           h3 {
             font-weight: 200;
           }
         }
-        .form_content, .update_content {
+        .form_content,
+        .update_content {
           div {
             width: 100%;
             display: flex;
@@ -199,7 +203,8 @@
             color: red;
             font-size: 14px;
           }
-          .create_btn, .update_btn {
+          .create_btn,
+          .update_btn {
             margin-top: 25px;
             button {
               padding: 7px 0px;
@@ -308,6 +313,7 @@
     }
   }
   .motivate {
+    min-height: 90vh;
     .motivate_header {
       display: flex;
       justify-content: flex-end;
@@ -331,7 +337,6 @@
       }
     }
     .motivate_msg {
-      padding: 0px 50px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -340,7 +345,7 @@
         margin: 10px 0px;
         padding: 20px;
         border-radius: 10px;
-        width: 60%;
+        width: 1000px;
         .quote {
           font-size: 18px;
         }
@@ -352,7 +357,7 @@
       }
       .skeleton {
         box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.35);
-        width: 60%;
+        width: 1000px;
         height: 90px;
         margin: 10px 0px;
         border-radius: 10px;
@@ -384,6 +389,115 @@
             border-radius: 7px;
             background-color: rgb(218, 218, 218);
           }
+        }
+      }
+    }
+  }
+  .footer {
+    height: 10vh;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .App {
+    .motivate {
+      .motivate_msg {
+        .msg,
+        .skeleton {
+          width: 800px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .App {
+    .motivate {
+      .motivate_msg {
+        .msg,
+        .skeleton {
+          width: 600px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .App {
+    .todos_page {
+      .delete_wrapper {
+        .delete {
+          width: 450px;
+        }
+      }
+    }
+    .motivate {
+      .motivate_msg {
+        .msg,
+        .skeleton {
+          width: 450px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .App {
+    .todos_page {
+      .todo_header {
+        margin: 10px;
+        .link {
+          padding: 5px 15px;
+        }
+      }
+      .search_todo {
+        input {
+          width: 90%;
+        }
+      }
+      .todos {
+        padding: 0px;
+        justify-content: center;
+        .todo {
+          width: 90%;
+        }
+      }
+      .create_form,
+      .update_form {
+        .form,
+        .update {
+          width: 90%;
+        }
+      }
+      .delete_wrapper {
+        .delete {
+          width: 95%;
+        }
+      }
+      .preview_wrapper {
+        .preview {
+          width: 90%;
+        }
+      }
+    }
+    .motivate {
+      .motivate_header {
+        margin: 10px;
+        .link {
+          padding: 5px 15px;
+        }
+      }
+      .motivate_msg {
+        .msg,
+        .skeleton {
+          width: 95%;
         }
       }
     }

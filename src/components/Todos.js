@@ -17,9 +17,6 @@ const Todos = () => {
   const [itemToDelete, setItemToDelete] = useState("");
   const [search, setSearch] = useState("");
 
-
-  console.log(todos)
-
   //Variable that sort all todos ascending by date
   const sortedTodos = todos.sort((a, b) => new Date(a.time) - new Date(b.time));
 
