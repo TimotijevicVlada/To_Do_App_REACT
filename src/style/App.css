@@ -64,6 +64,7 @@
 }
 
 .App .todos_page .search_todo input {
+  width: 400px;
   padding: 10px 20px;
   background-color: #ececec;
   border: none;
@@ -100,10 +101,23 @@
 
 .App .todos_page .todos .todo .todo_upper .todo_title {
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
 }
 
 .App .todos_page .todos .todo .todo_upper .todo_title h3 {
   font-weight: 200;
+}
+
+.App .todos_page .todos .todo .todo_upper .todo_title span {
+  position: absolute;
+  left: 0;
+  font-weight: bold;
 }
 
 .App .todos_page .todos .todo .todo_upper .todo_desc {
@@ -132,6 +146,21 @@
 
 .App .todos_page .todos .todo .todo_bottom .events .fa-trash {
   color: red;
+}
+
+.App .todos_page .centered {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 50px;
+}
+
+.App .todos_page .centered .no_todos {
+  font-size: 22px;
+  padding: 20px 0px;
 }
 
 .App .todos_page .create_form, .App .todos_page .update_form {

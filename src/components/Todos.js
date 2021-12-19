@@ -17,8 +17,12 @@ const Todos = () => {
   const [itemToDelete, setItemToDelete] = useState("");
   const [search, setSearch] = useState("");
 
+
+  //Variable that sort all todos ascending by date
+  const sortedTodos = todos.sort((a, b) => new Date(a.time) - new Date(b.time));
+
   //Variable that represent searched todos
-  const searchedTodos = todos.filter((item) =>
+  const searchedTodos = sortedTodos.filter((item) =>
     item.title.toLowerCase().includes(search.toLowerCase())
   );
 
@@ -38,8 +42,15 @@ const Todos = () => {
   //Handle update todo
   const handleUpdate = (id) => {
     setUpdateVisible(true);
-    const itemUpdate = todos.filter(item => item.id === id);
+    const itemUpdate = todos.filter((item) => item.id === id);
     setItemToUpdate(itemUpdate[0]);
+  };
+
+  //Function that search todos by the title
+  const handleSearch = (e) => {
+    setTimeout(() => {
+        setSearch(e.target.value);
+    }, 500)
   }
 
   //Function that get todos from the local storage
@@ -80,21 +91,26 @@ const Todos = () => {
       </div>
       <div className="search_todo">
         <input
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => handleSearch(e)}
           type="text"
           placeholder="Search todo"
         />
       </div>
-      <div className="todos">
-        {searchedTodos?.map((todo, index) => (
-          <Todo
-            key={index}
-            todo={todo}
-            handleDelete={handleDelete}
-            handlePreview={handlePreview}
-            handleUpdate={handleUpdate}
-          />
-        ))}
+      <div className={todos.length < 1 ? "centered" : "todos"}>
+        {todos.length < 1 ? (
+          <div className="no_todos">There is no todos yet</div>
+        ) : (
+          searchedTodos?.map((todo, index) => (
+            <Todo
+              key={index}
+              todo={todo}
+              index={index}
+              handleDelete={handleDelete}
+              handlePreview={handlePreview}
+              handleUpdate={handleUpdate}
+            />
+          ))
+        )}
       </div>
       {createTodoVisible && (
         <CreateTodo
@@ -117,7 +133,14 @@ const Todos = () => {
           setPreviewVisible={setPreviewVisible}
         />
       )}
-      {updateVisible && <UpdateTodo todos={todos} setTodos={setTodos} itemToUpdate={itemToUpdate} setUpdateVisible={setUpdateVisible}/>}
+      {updateVisible && (
+        <UpdateTodo
+          todos={todos}
+          setTodos={setTodos}
+          itemToUpdate={itemToUpdate}
+          setUpdateVisible={setUpdateVisible}
+        />
+      )}
     </div>
   );
 };

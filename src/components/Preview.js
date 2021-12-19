@@ -21,7 +21,7 @@ const Preview = ({ previewTodo, setPreviewVisible }) => {
           <p>{previewTodo.desc}</p>
         </div>
         <div className="preview_date">
-          <span>{previewTodo.time}</span>
+          <span>{new Date(previewTodo.time).toDateString()}</span>
         </div>
       </div>
     </div>

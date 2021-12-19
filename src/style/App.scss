@@ -44,6 +44,7 @@
       justify-content: center;
       margin: 10px 0px;
       input {
+        width: 400px;
         padding: 10px 20px;
         background-color: rgb(236, 236, 236);
         border: none;
@@ -71,9 +72,18 @@
           height: 90%;
           .todo_title {
             text-align: center;
+            display: flex;
+            justify-content: center;
+            position: relative;
             h3 {
               font-weight: 200;
             }
+            span {
+              position: absolute;
+              left: 0;
+              font-weight: bold;
+            }
+
           }
           .todo_desc {
             padding: 10px 0px;
@@ -97,6 +107,15 @@
             }
           }
         }
+      }
+    }
+    .centered {
+      display: flex;
+      justify-content: center;
+      margin: 0 50px;
+      .no_todos {
+        font-size: 22px;
+        padding: 20px 0px;
       }
     }
     .create_form, .update_form {

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Todo = ({ todo, handleDelete, handlePreview, handleUpdate }) => {
+const Todo = ({ todo, index, handleDelete, handlePreview, handleUpdate }) => {
 
 
     
@@ -8,6 +8,7 @@ const Todo = ({ todo, handleDelete, handlePreview, handleUpdate }) => {
     <div className="todo">
       <div onClick={() => handlePreview(todo.id)} className="todo_upper">
         <div className="todo_title">
+          <span>#{index + 1}</span>
           <h3>{todo.title}</h3>
         </div>
         <div className="todo_desc">
@@ -19,7 +20,7 @@ const Todo = ({ todo, handleDelete, handlePreview, handleUpdate }) => {
           <i onClick={() => handleUpdate(todo.id)} className="fas fa-edit"></i>
           <i onClick={() => handleDelete(todo.id)} className="fas fa-trash"></i>
         </div>
-        <p className="date">{todo.time}</p>
+        <p className="date">{new Date(todo.time).toDateString()}</p>
       </div>
     </div>
   );

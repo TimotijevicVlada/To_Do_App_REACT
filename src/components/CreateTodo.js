@@ -98,7 +98,7 @@ const CreateTodo = ({setCreateTodoVisible, todos, setTodos}) => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.date}
-              type="text"
+              type="date"
               name="date"
               id="date"
             />

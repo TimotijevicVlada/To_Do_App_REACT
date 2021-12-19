@@ -94,7 +94,7 @@ const UpdateTodo = ({ itemToUpdate, setUpdateVisible, todos, setTodos }) => {
           <div>
             <label htmlFor="date">Date</label>
             <input
-              type="text"
+              type="date"
               name="date"
               value={formik.values.date}
               onChange={formik.handleChange}
