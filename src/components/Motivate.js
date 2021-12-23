@@ -4,18 +4,21 @@ import axios from "axios";
 import SkeletonMotivate from "./SkeletonMotivate";
 
 const Motivate = () => {
-    
   const [motivateMsg, setMotivateMsg] = useState([]);
   const [skeletonVisible, setSkeletonVisible] = useState(true);
 
   //Function that get motivational message from API
   const getMotivate = async () => {
-    const response = await axios.get(
-      "https://run.mocky.io/v3/dee319cd-aa8b-4e30-b86e-3743237fca55"
-    );
-    //console.log(response.data.motivational_quotes);
-    setMotivateMsg(response.data.motivational_quotes);
-    setSkeletonVisible(false);
+    try {
+      const response = await axios.get(
+        "https://run.mocky.io/v3/dee319cd-aa8b-4e30-b86e-3743237fca55"
+      );
+      //console.log(response.data.motivational_quotes);
+      setMotivateMsg(response.data.motivational_quotes);
+      setSkeletonVisible(false);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
